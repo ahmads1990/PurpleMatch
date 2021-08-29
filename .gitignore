@@ -1,0 +1,27 @@
+### External where sfml files
+/External
+
+### solution
+PurpleMatch.sln
+
+### dll files
+
+PurpleMatch/sfml-audio-2.dll
+PurpleMatch/sfml-audio-d-2.dll
+
+PurpleMatch/sfml-graphics-2.dll
+PurpleMatch/sfml-graphics-d-2.dll
+
+PurpleMatch/sfml-network-2.dll
+PurpleMatch/sfml-network-d-2.dll
+
+PurpleMatch/sfml-system-2.dll
+PurpleMatch/sfml-system-d-2.dll
+
+PurpleMatch/sfml-window-2.dll
+PurpleMatch/sfml-window-d-2.dll
+
+PurpleMatch/openal32.dll
+
+### vs studio
+.vs/
