@@ -1,9 +1,6 @@
 ### External where sfml files
 /External
 
-### solution
-PurpleMatch.sln
-
 ### dll files
 
 PurpleMatch/sfml-audio-2.dll
