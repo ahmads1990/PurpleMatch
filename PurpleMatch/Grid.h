@@ -1,22 +1,23 @@
 #pragma once
-#include "Game.h"
+#include "SFML/Graphics.hpp"
+#include "iostream"
 using namespace sf;
 class Grid
 {
 private:
 	//Attr
-	sf::Vector2f dimen;
 	Sprite sprite;
 	Texture texture;
+
 	//Private functions
-	void initDimen();
-	void initSprite();
 public:
 	//Constructors /Destructors
 	Grid();
 	~Grid();
 
-	//SendSprite: returns the sprite to be drawn
+	//SetSprite: sets sprite info (location, size scale, texture)
+	void setSprite(int x, int y,int multiplier, Texture& spriteSheet);
+	//GetSprite: returns the sprite to be drawn
 	Sprite getSprite();
 };
 

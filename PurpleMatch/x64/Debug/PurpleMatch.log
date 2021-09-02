@@ -1,5 +1,6 @@
 ﻿  Game.cpp
-  Grid.cpp
   PurpleMatch.cpp
+  map.cpp
+C:\Users\magica\My projects\PurpleMatch\PurpleMatch\map.cpp(38,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   PurpleMatch.vcxproj -> C:\Users\magica\My projects\PurpleMatch\x64\Debug\PurpleMatch.exe

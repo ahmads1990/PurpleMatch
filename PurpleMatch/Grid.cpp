@@ -1,29 +1,22 @@
 #include "Grid.h"
 
-void Grid::initDimen()
-{
-	dimen.x = 200.f;
-	dimen.y = 200.f;
-}
-
-void Grid::initSprite()
-{
-	if (!texture.loadFromFile("Assets/test.png")) {
-		//Error message
-		std::cout << "Couldnt find texture";
-	}
-
-	sprite.setTexture(texture,true);
-}
-
+//Constructor
 Grid::Grid()
 {
-	initDimen();
-	initSprite();
 }
 
+//Destructuor
 Grid::~Grid()
 {
+}
+
+//SetSprite: sets sprite info (location, size scale, texture)
+void Grid::setSprite(int x, int y,int multiplier, Texture& spriteSheet)
+{
+	sprite.setTexture(spriteSheet);
+	sprite.setTextureRect(IntRect(17 * multiplier,0, 17, 17));
+	//sprite.setScale(Vector2f(2, 2));
+	sprite.setPosition(Vector2f(20.f*x, 20.f * y));
 }
 
 Sprite Grid::getSprite()
