@@ -20,7 +20,7 @@ public:
 	~gridMap();
 
 	//LoadLevel: Creates Grids 2d array and assign sprites randomly on them
-	void loadLevel();
+	void loadLevel(int nInRow);
 
 };
 

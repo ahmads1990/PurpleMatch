@@ -22,23 +22,20 @@ gridMap::~gridMap()
 }
 
 //LoadLevel: Creates Grids 2d array and assign sprites randomly on them
-void gridMap::loadLevel()
+void gridMap::loadLevel(int nInRow)
 {
-	/*
-		Todo function avaliable for more sizes
-	*/
-	int nInRow = 6; //Size of row (4x4 or 6x6)
-	int nRepetion = (nInRow*nInRow) / 8; 
-	//Create array
+	//Size of row (4x4 or 6x6 or 8x8)
+    int nRepetion = (nInRow*nInRow) / 8; 
+	//Create 2d array[][] with sizes = nInRow
 	gArr = new Grid * [nInRow];
 	for (int row = 0; row < nInRow; row++)
 	{
 		gArr[row] = new Grid[nInRow];
 	}
-	//Create freq array and set values to zeros
+	//Create freq array and set values to zeros (8 is default number of sprites in this game)
 	int freq[8] = { 0 };
-	//Check 
-	int rem = nInRow * nInRow % 8;
+	//Check if total number of grids is divisble by 8 if not some grids might have extra repetions
+	int rem = (nInRow * nInRow) % 8;
 	if (rem != 0) {
 		for (int i = rem / 2; i > 0; i--)
 		{
@@ -47,7 +44,6 @@ void gridMap::loadLevel()
 	}
 	int rndNo = 0;
 	srand(time(NULL)); //to truly generate random number
-	int test[6][6];
 	// filling board with random numbers
 	for (int row = 0; row < nInRow; row++) {
 		for (int col = 0; col < nInRow; col++) {
@@ -55,8 +51,8 @@ void gridMap::loadLevel()
 			if (freq[rndNo] < nRepetion) { //if that random number isnt repeated more than aallowed repetions
 				//Assign its texture
 				gArr[row][col].setSprite(row,col,rndNo, texture);
-				test[row][col] = rndNo;
-				freq[rndNo]++;	//increment random number repetions
+				//increment random number repetions
+				freq[rndNo]++;
 			}
 			else //if that random number exceeds allowed repetions
 			{
@@ -65,19 +61,12 @@ void gridMap::loadLevel()
 					if (freq[rndNo] < nRepetion) {
 						//Assign its texture
 						gArr[row][col].setSprite(row, col, rndNo, texture);
-						test[row][col] = rndNo;
-						freq[rndNo]++; //increment random number repetions
+						//increment random number repetions
+						freq[rndNo]++;
 						break;
 					}
 				}
 			}
 		}
-	}
-	for (int i = 0; i < 6; i++)
-	{
-		for (int k = 0; k < 6; k++) {
-			std::cout << test[i][k] << " ";
-		}
-		std::cout << std::endl;
 	}
 }
