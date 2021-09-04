@@ -47,24 +47,14 @@ void gridMap::loadLevel(int nInRow)
 	// filling board with random numbers
 	for (int row = 0; row < nInRow; row++) {
 		for (int col = 0; col < nInRow; col++) {
-			rndNo = rand() % 8;	//generate random number from 0 to 7
-			if (freq[rndNo] < nRepetion) { //if that random number isnt repeated more than aallowed repetions
-				//Assign its texture
-				gArr[row][col].setSprite(row,col,rndNo, texture);
-				//increment random number repetions
-				freq[rndNo]++;
-			}
-			else //if that random number exceeds allowed repetions
-			{
-				while (true) { //generate random number then see if it can be repeated or not
-					rndNo = rand() % 8;
-					if (freq[rndNo] < nRepetion) {
-						//Assign its texture
-						gArr[row][col].setSprite(row, col, rndNo, texture);
-						//increment random number repetions
-						freq[rndNo]++;
-						break;
-					}
+			while (true) { //generate random number then see if it can be repeated or not
+				rndNo = rand() % 8;
+				if (freq[rndNo] < nRepetion) {
+					//Assign its texture
+					gArr[row][col].setSprite(row, col, rndNo, texture);
+					//increment random number repetions
+					freq[rndNo]++;
+					break;
 				}
 			}
 		}
