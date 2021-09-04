@@ -42,8 +42,6 @@ public:
 	bool isRunning();
 	//GoNextLevel: delete current Gmap and create one with diff size
 	void goNextLevel();
-	//DrawMatrix: used to draw grids by asking for sprites for each one
-	void drawMatrix();
 	//Check events: check input events
 	void updateEvents();
 	//Update

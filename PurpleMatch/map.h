@@ -8,7 +8,8 @@
 */
 class gridMap
 {
-public:
+private:
+	//Private attributes
 	sf::Texture texture;
 	Grid** gArr;
 
@@ -22,5 +23,7 @@ public:
 	//LoadLevel: Creates Grids 2d array and assign sprites randomly on them
 	void loadLevel(int nInRow);
 
+	//DrawMatrix: used to draw grids by asking for sprites for each one
+	void drawMatrix(int size, RenderWindow* window);
 };
 

@@ -60,3 +60,15 @@ void gridMap::loadLevel(int nInRow)
 		}
 	}
 }
+
+void gridMap::drawMatrix(int size, RenderWindow* window)
+{
+	for (int row = 0; row < size; row++)
+	{
+		for (int col = 0; col < size; col++)
+		{
+			//To do draw matrix
+			window->draw(gArr[row][col].getSprite());
+		}
+	}
+}

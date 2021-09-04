@@ -54,18 +54,6 @@ void Game::goNextLevel()
 	gMatrix.loadLevel(gamelevel[currentLevel].nGridInRow);
 }
 
-void Game::drawMatrix()
-{
-	for (int row = 0; row < gamelevel[currentLevel].nGridInRow; row++)
-	{
-		for (int col = 0; col < gamelevel[currentLevel].nGridInRow; col++)
-		{
-			//To do draw matrix
-			this->window->draw(gMatrix.gArr[row][col].getSprite());
-		}
-	}
-}
-
 //Check events: check input events
 void Game::updateEvents()
 {
@@ -85,6 +73,6 @@ void Game::update()
 void Game::render()
 {
 	this->window->clear();
-	drawMatrix();
+	gMatrix.drawMatrix(gamelevel[currentLevel].nGridInRow, window);
 	this->window->display();
 }
