@@ -27,7 +27,7 @@ Sprite Grid::getSprite()
 	return sprite;
 }
 
-int Grid::returnSpriteId()
+int Grid::getSpriteId()
 {
 	return spriteId;
 }
