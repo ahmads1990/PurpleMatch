@@ -14,8 +14,8 @@ void Game::initVars()
 void Game::initWindow()
 {
 	//Window size options
-	videoMode.height = 600;
-	videoMode.width = 800;
+	videoMode.width = 960;
+	videoMode.height = 540;
 	//Init window pointer
 	window = new RenderWindow(videoMode, "Test sfml");
 }
